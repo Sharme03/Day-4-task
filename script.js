@@ -233,17 +233,13 @@ console.log(median(num1, num2));
 
 //! IIFE function
 
-let num3 = [1, 16,12, 18, 13, 27, 38];
-let num4 = [2, 13, 15, 30, 45, 47];
-(function (a, b) {
-    var c = [...a, ...b].sort((a, b) => a - b);
-    const half = (c.length / 2) | 0;
-    if (c.length % 2) return c[half];
-    {
-    return (c[half] + c[half - 1]) / 2;
-    }
-    console.log(c);
-})(num3,num4);
+var median = function (a, b) {
+    let c1 = [...a, ...b].sort((a, b) => a - b);
+    const half = (c1.length / 2) | 0;
+    if (c1.length % 2) return c1[half];
+    return (c1[half] + c1[half - 1]) / 2;
+};
+console.log(median([1, 18, 13, 27, 38], [2, 13, 17, 30, 45, 47]));
 
 
 // Arrow function
